@@ -11,6 +11,7 @@
     <link rel="shortcut icon" href="Logo.png" type="image/x-icon">
     <link rel="stylesheet" href="~/css/Style.css">
     <script defer src="~/js/script.js"></script>
+    <script src="https://kit.fontawesome.com/c781fd97e2.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="top-bar">
@@ -23,7 +24,8 @@
             <a href="#"><i class="fa fa-shopping-cart"></i> Giỏ hàng</a>
             @if (User.Identity?.IsAuthenticated ?? false)
             {
-                <a asp-controller="Account" asp-action="Logout"><i class="<i class=" fa-solid fa-arrow-right-from-bracket"></i>">Đăng xuất</a>
+                <a asp-controller="PersonalProfile" asp-action="Index" style="cursor: pointer"><i class="fa-solid fa-user"></i>@User.Identity.Name</a>
+                <a asp-controller="Account" asp-action="Logout"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a>
 
             }else{
                 <a asp-controller="Account" asp-action="Login"><i class="fa fa-user"></i> Đăng Nhập</a>
